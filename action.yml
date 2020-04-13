@@ -1,4 +1,4 @@
-name: 'Golang check imports order'
+name: 'Check Golang imports order'
 author: 'Jérôme Pogeant'
 description: 'Check imports order of your code using goimports'
 inputs:
