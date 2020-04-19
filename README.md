@@ -1,4 +1,4 @@
-# Goimports action
+# Go Imports Action
 
 This action execute goimports command and return the output if the command fail.
 
@@ -6,7 +6,10 @@ This action execute goimports command and return the output if the command fail.
 
 ### `goimports-path`
 
-Path used by goimports command, default is `./`.
+Path where your Go files are.
+This path will be used by goimports command to check imports of this files.
+
+Default one is the repository root (`./`).
 
 ## Outputs
 
@@ -14,10 +17,18 @@ Path used by goimports command, default is `./`.
 
 The goimports output if the command fail.
 
-## Example usage
+For example:
+
+```bash
+All following has imports not properly ordered
+handlers/writer.go
+services/writer/writerServices.go
+```
+
+## Example Usage
 
 ```yaml
-uses: Jerome1337/goimports-action@v1.0.0
+uses: Jerome1337/goimports-action@v1.0.1
 with:
   goimports-path: './src'
 ````
