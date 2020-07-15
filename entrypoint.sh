@@ -3,7 +3,7 @@
 cd $GITHUB_WORKSPACE
 
 exec 5>&1
-GOIMPORTS_OUTPUT="$(goimports -l -w "$1" | tee /dev/fd/5)"
+GOIMPORTS_OUTPUT="$(goimports -l -w `find $1 -name '*.go' | grep -v vendor` | tee /dev/fd/5)"
 
 if [ -n "$GOIMPORTS_OUTPUT" ]; then
   echo "All following has imports not properly ordered"
